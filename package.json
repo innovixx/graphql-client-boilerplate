@@ -1,0 +1,50 @@
+{
+  "name": "graphql-client-boilerplate",
+  "version": "0.0.1",
+  "description": "This GraphQL client boilerplate provides a basic structure for building clients to connect to graphql servers.",
+  "repository": "git@github.com:Innovixx-Development/graphql-server-boilerplate.git",
+  "author": "Kalon Robson <kalon.robson@innovixx.co.uk>",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview --port 3000",
+    "codegen": "cross-env TS_NODE_PROJECT=tsconfig.codegen.json graphql-codegen --config codegen.ts"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.7.16",
+    "@apollo/react-hooks": "^4.0.0",
+    "graphql": "^16.7.1",
+    "graphql-tag": "^2.12.6",
+    "jss": "^10.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-jss": "^10.10.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^2.16.4",
+    "@graphql-codegen/client-preset": "^1.2.6",
+    "@graphql-codegen/typescript": "^2.8.7",
+    "@graphql-codegen/typescript-operations": "^2.5.12",
+    "@graphql-codegen/typescript-react-apollo": "^3.3.7",
+    "@innovixx/eslint-config": "^1.1.0",
+    "@types/color": "^3.0.3",
+    "@types/node": "^20.3.2",
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.38.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9"
+  }
+}
