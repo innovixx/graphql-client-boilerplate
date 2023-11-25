@@ -29,8 +29,8 @@ const App = (): React.ReactElement => {
 const apiUri = import.meta.env.VITE_APP_API;
 
 const httpLink = createHttpLink({
-  uri: `${apiUri}`,
   credentials: 'same-origin',
+  uri: `${apiUri}`,
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -44,8 +44,8 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
+  link: authLink.concat(httpLink),
 });
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

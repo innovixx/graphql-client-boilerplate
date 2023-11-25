@@ -3,11 +3,11 @@ import { colors, maxContentWidth, spacing } from '../../../styles';
 
 export const containerStyles = createUseStyles({
   container: {
-    maxWidth: maxContentWidth,
-    width: 'auto',
+    backgroundColor: colors.white,
     height: 'auto',
     margin: '0 auto',
-    backgroundColor: colors.white,
+    maxWidth: maxContentWidth,
     padding: spacing.small,
+    width: 'auto',
   },
 });

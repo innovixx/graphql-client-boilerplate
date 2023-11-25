@@ -7,17 +7,17 @@ export const defaultType = {
 
 const heading = {
   ...defaultType,
-  fontWeight: 600,
-  margin: 0,
-
   '& span': {
     color: 'inherit',
+    fontFamily: 'inherit',
     fontSize: 'inherit',
     fontWeight: 'inherit',
     lineHeight: 'inherit',
     margin: 'inherit',
-    fontFamily: 'inherit',
   },
+  fontWeight: 600,
+
+  margin: 0,
 };
 
 export const h1 = {
@@ -46,8 +46,8 @@ export const h2 = {
 export const h3 = {
   ...heading,
   fontSize: base(1),
-  lineHeight: base(1 * 1.25),
   fontWeight: 400,
+  lineHeight: base(1 * 1.25),
 
   [queries.md]: {
     fontSize: base(0.8),
