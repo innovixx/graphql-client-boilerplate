@@ -7,9 +7,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview --port 3000",
-    "codegen": "cross-env TS_NODE_PROJECT=tsconfig.codegen.json graphql-codegen --config codegen.ts"
+    "codegen": "cross-env TS_NODE_PROJECT=tsconfig.codegen.json graphql-codegen --config codegen.ts",
+    "lint": "eslint",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@apollo/client": "^3.7.16",
@@ -44,7 +45,14 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-sort-export-all": "^1.4.1",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "yarn lint"
+    ]
   }
 }
