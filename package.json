@@ -10,7 +10,8 @@
     "preview": "vite preview --port 3000",
     "codegen": "cross-env TS_NODE_PROJECT=tsconfig.codegen.json graphql-codegen --config codegen.ts",
     "lint": "eslint",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@apollo/client": "^3.7.16",
