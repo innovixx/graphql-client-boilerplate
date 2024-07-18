@@ -9,7 +9,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview --port 3000",
     "codegen": "cross-env TS_NODE_PROJECT=tsconfig.codegen.json graphql-codegen --config codegen.ts",
-    "lint": "eslint . --ext .ts,.tsx",
+    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
     "lint-staged": "lint-staged --verbose",
     "postinstall": "husky install"
   },
@@ -53,7 +53,7 @@
   },
   "lint-staged": {
     "**/*.{js,ts,jsx,tsx}": [
-      "yarn lint",
+      "eslint",
       "bash -c tsc"
     ]
   }
