@@ -4,6 +4,7 @@ import { setContext } from '@apollo/client/link/context';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { Container } from './components';
 import { useTestQuery } from './graphql/generated/schema';
+import './styles/index.scss';
 
 const App = (): React.ReactElement => {
   const { data: testData } = useTestQuery();
