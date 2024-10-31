@@ -4,7 +4,6 @@
 @use "sass:map";
 
 .container {
-  width: auto;
   background-color: map.get($colors, white);
   height: auto;
   margin: 0 auto;
@@ -13,6 +12,6 @@
   width: auto;
 
   @include queries(sm) {
-    padding: 50px;
+    padding: 3.125rem;
   }
 }

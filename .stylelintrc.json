@@ -7,9 +7,13 @@
   ],
   "rules": {
     "scss/dollar-variable-pattern": null,
-    "selector-class-pattern": null,
-    "value-keyword-case": null,
-    "scss/no-global-function-names": null,
-    "scss/at-extend-no-missing-placeholder": null
+    "no-unknown-animations": true,
+    "no-unknown-custom-properties": true,
+    "no-duplicate-selectors": true,
+    "declaration-block-no-duplicate-properties": true,
+    "font-weight-notation": "numeric",
+    "unit-disallowed-list": [
+      "px"
+    ]
   }
 }

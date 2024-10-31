@@ -11,7 +11,10 @@ export const Container: React.FC<Props> = ({
   children,
   className,
 }) => (
-  <div className={constructClassName([styles.container, className])}>
+  <div className={constructClassName([
+    styles.container,
+    className])}
+  >
     {children}
   </div>
 );

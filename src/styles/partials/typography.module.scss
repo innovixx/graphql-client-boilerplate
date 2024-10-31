@@ -2,7 +2,7 @@
 @use '../globals/base.module.scss' as *;
 
 * {
-  font-family: system-ui, Segoe UI, Helvetica Neue, Arial, ;
+  font-family: system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif;
 }
 
 h1 {
@@ -12,5 +12,5 @@ h1 {
 p {
   font-size: base(0.8);
   line-height: base(0.8) * 1.2;
-  font-family: Arial;
+  font-weight: 700;
 }
