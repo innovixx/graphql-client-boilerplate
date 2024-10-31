@@ -5,7 +5,7 @@
 
 .container {
   width: auto;
-  background-color: map.get($colors, light);
+  background-color: map.get($colors, white);
   height: auto;
   margin: 0 auto;
   max-width: $max-content-width;
