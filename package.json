@@ -5,7 +5,7 @@
   "repository": "git@github.com:Innovixx-Development/graphql-server-boilerplate.git",
   "author": "Kalon Robson <kalon.robson@innovixx.co.uk>",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"vite\"  \"typed-scss-modules src --watch\"",
     "build": "tsc && vite build",
     "preview": "vite preview --port 3000",
     "codegen": "cross-env TS_NODE_PROJECT=tsconfig.codegen.json graphql-codegen --config codegen.ts",
@@ -17,6 +17,7 @@
   "dependencies": {
     "@apollo/client": "^3.7.16",
     "@apollo/react-hooks": "^4.0.0",
+    "concurrently": "^9.0.1",
     "graphql": "^16.7.1",
     "graphql-tag": "^2.12.6",
     "react": "^18.2.0",
@@ -54,6 +55,7 @@
     "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-prettier": "^5.0.2",
     "stylelint-scss": "^6.8.1",
+    "typed-scss-modules": "^8.0.1",
     "typescript": "^5.6.3",
     "vite": "^5.4.10"
   },
