@@ -2,17 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { setContext } from '@apollo/client/link/context';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
-import { globalStyles } from './styles';
 import { Container } from './components';
 import { useTestQuery } from './graphql/generated/schema';
 
 const App = (): React.ReactElement => {
-  const styles = globalStyles();
-
   const { data: testData } = useTestQuery();
 
   return (
-    <div className={styles.app}>
+    <div>
       <Container>
         {
           testData?.test ? (

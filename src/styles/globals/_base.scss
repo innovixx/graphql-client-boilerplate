@@ -1,0 +1,8 @@
+@use '../partials/variables' as *;
+@use 'sass:math';
+
+$multiplier: 1;
+
+@function base($multiplier: 1) {
+  @return math.div($baselinePX, $htmlFontSize) * $multiplier * 1rem;
+}

@@ -1,0 +1,13 @@
+@use '../../../styles/partials/variables' as *;
+@use '../../../styles/partials/sizes' as *;
+@use "sass:map";
+
+.container {
+  width: auto;
+  background-color: $white;
+  height: auto;
+  margin: 0 auto;
+  max-width: $max-content-width;
+  padding: map.get($spacing, medium);
+  width: auto;
+}

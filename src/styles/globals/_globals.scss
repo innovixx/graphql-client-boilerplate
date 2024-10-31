@@ -1,0 +1,7 @@
+@use '../partials/variables' as *;
+@use '../globals/base' as *;
+
+html {
+  font-size: #{($htmlFontSize)}px;
+  line-height: #{$baselinePX}px;
+}

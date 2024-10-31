@@ -6,6 +6,13 @@ export default ({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
   return defineConfig({
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+        },
+      },
+    },
     plugins: [react()],
     server: {
       host: true,

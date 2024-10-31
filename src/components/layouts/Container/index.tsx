@@ -1,5 +1,6 @@
 import React from 'react';
-import { containerStyles } from './styles';
+import styles from './styles.module.scss';
+import { constructClassName } from '../../../utils/constructClassName';
 
 interface Props {
   children: React.ReactNode;
@@ -9,12 +10,8 @@ interface Props {
 export const Container: React.FC<Props> = ({
   children,
   className,
-}) => {
-  const styles = containerStyles();
-
-  return (
-    <div className={`${styles.container} ${className || ''}`}>
-      {children}
-    </div>
-  );
-};
+}) => (
+  <div className={constructClassName([styles.container, className])}>
+    {children}
+  </div>
+);
