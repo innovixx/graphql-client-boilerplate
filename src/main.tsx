@@ -5,6 +5,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@ap
 import { Container } from './components';
 import { useTestQuery } from './graphql/generated/schema';
 import './styles/index.scss';
+import './styles/reset.scss';
 
 const App = (): React.ReactElement => {
   const { data: testData } = useTestQuery();

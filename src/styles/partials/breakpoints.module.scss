@@ -2,15 +2,27 @@
 @use 'sass:map';
 
 $breakpoints: (
-  xs: 30rem,
-  sm: 48rem,
-  md: 62rem,
-  lg: 75rem,
-  xl: 100rem,
+  xs: 480,
+  sm: 768,
+  md: 992,
+  lg: 1200,
+  xl: 1600,
 );
 
 @mixin queries($breakpoint) {
-  @media only screen and (max-width: map.get($breakpoints, $breakpoint)) {
+  $breakpoint-value: map.get($breakpoints, $breakpoint);
+  @media only screen and (max-width: #{$breakpoint-value}px) {
     @content;
   }
+}
+
+:export {
+  @each $key, $value in $breakpoints {
+    #{"" + $key}: $value;
+  }
+  lg: map.get($breakpoints, lg),;
+  md: map.get($breakpoints, md),;
+  sm: map.get($breakpoints, sm),;
+  xl: map.get($breakpoints, xl),;
+  xs: map.get($breakpoints, xs),
 }
