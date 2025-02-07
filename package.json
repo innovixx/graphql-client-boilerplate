@@ -27,13 +27,12 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.2.0",
     "@graphql-codegen/cli": "^2.16.4",
     "@graphql-codegen/client-preset": "^1.2.6",
     "@graphql-codegen/typescript": "^2.8.7",
     "@graphql-codegen/typescript-operations": "^2.5.12",
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
-    "@innovixx/eslint-config": "^2.0.1",
+    "@innovixx/eslint-config": "3.0.0",
     "@innovixx/stylelint-config": "^0.0.5",
     "@types/color": "^3.0.3",
     "@types/node": "^20.3.2",
@@ -45,7 +44,7 @@
     "lint-staged": "^15.2.10",
     "sass": "^1.80.5",
     "typed-scss-modules": "^8.0.1",
-    "typescript": "^5.6.3",
+    "typescript": "^5.7.3",
     "vite": "^6.0.11"
   },
   "lint-staged": {
