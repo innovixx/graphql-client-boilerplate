@@ -14,8 +14,8 @@ const App = (): React.ReactElement => {
     <div>
       <Container>
         {
-          testData?.test ? (
-            <p>{testData.test}</p>
+          testData && testData.test !== null ? (
+            <p>{testData.test ?? 'No data available'}</p>
           ) : (
             <p>loading...</p>
           )
@@ -25,19 +25,19 @@ const App = (): React.ReactElement => {
   );
 };
 
-const apiUri = import.meta.env.VITE_APP_API;
+const apiUri = typeof import.meta.env.VITE_APP_API === 'string' ? import.meta.env.VITE_APP_API : '';
 
 const httpLink = createHttpLink({
   credentials: 'same-origin',
-  uri: `${apiUri}`,
+  uri: apiUri,
 });
 
-const authLink = setContext((_, { headers }) => {
-  const token = sessionStorage.getItem('token');
+const authLink = setContext((_, { headers }: { headers?: Record<string, string> }) => {
+  const token: string | null = sessionStorage.getItem('token');
   return {
     headers: {
       ...headers,
-      'X-CSRF-TOKEN': token || '',
+      'X-CSRF-TOKEN': token ?? '',
     },
   };
 });
@@ -47,11 +47,13 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
 });
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
-
-  </React.StrictMode>,
-);
+const rootElement = document.getElementById('root');
+if (rootElement) {
+  ReactDOM.createRoot(rootElement).render(
+    <React.StrictMode>
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
+    </React.StrictMode>,
+  );
+}
