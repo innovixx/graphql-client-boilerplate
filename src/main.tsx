@@ -14,8 +14,8 @@ const App = (): React.ReactElement => {
     <div>
       <Container>
         {
-          testData && testData.test !== null ? (
-            <p>{testData.test ?? 'No data available'}</p>
+          (testData?.test !== undefined) ? (
+            <p>{testData.test}</p>
           ) : (
             <p>loading...</p>
           )
@@ -25,19 +25,19 @@ const App = (): React.ReactElement => {
   );
 };
 
-const apiUri = typeof import.meta.env.VITE_APP_API === 'string' ? import.meta.env.VITE_APP_API : '';
+const apiUri = `${import.meta.env.VITE_APP_API}`;
 
 const httpLink = createHttpLink({
   credentials: 'same-origin',
   uri: apiUri,
 });
 
-const authLink = setContext((_, { headers }: { headers?: Record<string, string> }) => {
-  const token: string | null = sessionStorage.getItem('token');
+const authLink = setContext((_, { headers = {} }: { headers?: Record<string, string> }) => {
+  const token = sessionStorage.getItem('token');
   return {
     headers: {
       ...headers,
-      'X-CSRF-TOKEN': token ?? '',
+      'X-CSRF-TOKEN': `${token}`,
     },
   };
 });
