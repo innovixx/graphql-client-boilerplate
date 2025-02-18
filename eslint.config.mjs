@@ -9,6 +9,7 @@ export default [
   {
     ignores: [
       'src/graphql/generated',
+      'codegen.ts',
     ],
   },
   {
