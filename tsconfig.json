@@ -27,7 +27,8 @@
   "include": [
     "src",
     "./global.d.ts",
-    "eslint.config.mjs"
+    "eslint.config.mjs",
+    "vite.config.mjs"
   ],
   "references": [
     {
