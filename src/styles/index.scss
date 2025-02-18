@@ -1,6 +1,4 @@
-@use './partials/variables.module.scss' as *;
-@use './partials/typography.module.scss' as *;
-@use './globals/globals.scss' as *;
-@use './globals/base.module.scss' as *;
-@use './partials/sizes.module.scss' as *;
-@use './partials/breakpoints.module.scss' as *;
+@forward "./base/index.module.scss";
+@forward "./colors/index.module.scss";
+@forward "./queries/index.module.scss";
+@forward "./sizes/index.module.scss";

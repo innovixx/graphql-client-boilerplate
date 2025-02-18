@@ -1,0 +1,29 @@
+@use "../base/index.module.scss" as *;
+@use "sass:map";
+
+$spacing: (
+  large: base(4),
+  medium: base(2),
+  small: base(),
+  xLarge: base(8),
+  xSmall: base(0.5),
+);
+
+@function spacing($key) {
+  @return map.get($spacing, $key);
+}
+
+$modalWidth: (
+  normal: base(30),
+  semiLarge: base(40),
+  large: base(76),
+  side: base(30),
+  smallSide: base(18)
+);
+
+@function modalWidth($key) {
+  @return map.get($modalWidth, $key);
+}
+
+$maxContentWidth: base(96);
+$headerHeight: base(3);

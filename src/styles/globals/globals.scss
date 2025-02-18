@@ -1,7 +1,0 @@
-@use '../partials/variables.module.scss' as *;
-@use '../globals/base.module.scss' as *;
-
-html {
-  font-size: #{($htmlFontSize)}px;
-  line-height: #{$baselinePX}px;
-}

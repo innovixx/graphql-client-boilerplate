@@ -1,5 +1,7 @@
-@use '../partials/variables.module.scss' as *;
 @use 'sass:math';
+
+$htmlFontSize: 16;
+$baselinePX: 20;
 
 $multiplier: 1;
 

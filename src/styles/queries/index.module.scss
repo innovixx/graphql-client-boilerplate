@@ -1,12 +1,13 @@
-@use './sizes.module.scss' as *;
+@use "../base/index.module.scss" as *;
 @use 'sass:map';
 
 $breakpoints: (
-  xs: 480,
+  xxs: 320,
+  xs: 425,
   sm: 768,
-  md: 992,
-  lg: 1200,
-  xl: 1600,
+  md: 1024,
+  lg: 1140,
+  xl: 2560,
 );
 
 @mixin queries($breakpoint) {
