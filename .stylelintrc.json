@@ -1,8 +1,0 @@
-{
-  "extends": [
-    "@innovixx/stylelint-config"
-  ],
-  "ignoreFiles": [
-    "src/styles/colors/index.module.scss"
-  ]
-}

@@ -3,18 +3,18 @@ import styles from './styles.module.scss';
 import { constructClassName } from '../../../utils/constructClassName';
 
 interface Props {
-  children: React.ReactNode;
-  className?: string;
+	children: React.ReactNode;
+	className?: string;
 }
 
 export const Container: React.FC<Props> = ({
-  children,
-  className,
+	children,
+	className,
 }) => (
-  <div className={constructClassName([
-    styles.container,
-    className])}
-  >
-    {children}
-  </div>
+	<div className={constructClassName([
+		styles.container,
+		className])}
+	>
+		{children}
+	</div>
 );

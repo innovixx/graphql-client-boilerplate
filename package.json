@@ -14,7 +14,6 @@
     "lint:styles": "stylelint \"**/*.scss\"",
     "generate-types:styles": "typed-scss-modules src --outputFolder src/types/styles",
     "watch:generate-types:styles": "pnpm generate-types:styles --watch --logLevel=silent",
-    "stylelint": "stylelint \"**/*.scss\" --fix",
     "prepare": "husky"
   },
   "dependencies": {
@@ -32,8 +31,8 @@
     "@graphql-codegen/typescript": "^2.8.7",
     "@graphql-codegen/typescript-operations": "^2.5.12",
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
-    "@innovixx/eslint-config": "^3.0.7",
-    "@innovixx/stylelint-config": "^0.0.5",
+    "@innovixx/eslint-config": "^3.0.9",
+    "@innovixx/stylelint-config": "^1.0.2",
     "@types/color": "^3.0.3",
     "@types/node": "^20.3.2",
     "@types/react": "^18.0.37",
@@ -42,14 +41,14 @@
     "cross-env": "^7.0.3",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
-    "sass": "^1.80.5",
-    "typed-scss-modules": "^8.0.1",
+    "stylelint": "^16.15.0",
+    "typed-scss-modules": "^8.1.0",
     "typescript": "^5.7.3",
-    "vite": "^6.0.11"
+    "vite": "^6.2.0"
   },
   "lint-staged": {
     "**/*.{js,ts,jsx,tsx}": [
-      "eslint",
+      "eslint --quiet",
       "bash -c tsc"
     ]
   }
