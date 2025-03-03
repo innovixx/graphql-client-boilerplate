@@ -9,6 +9,6 @@
   width: auto;
 
   @include queries(sm) {
-    padding: 3.125rem;
+    padding: base(2.5);
   }
 }
