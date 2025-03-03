@@ -6,6 +6,10 @@ export default {
 	extends: [
 		...extendsConfig.extends,
 	],
+	ignoreFiles: [
+		'src/styles/colors/index.module.scss',
+		'src/styles/queries/index.module.scss',
+	],
 	plugins: [
 		...plugins.plugins,
 	],

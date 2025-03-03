@@ -1,7 +1,12 @@
-@use "../base/index.module.scss" as *;
+@use '../base/index.module.scss' as *;
 
 * {
-  font-family: system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif;
+  font-family:
+    system-ui,
+    Segoe UI,
+    Helvetica Neue,
+    Arial,
+    sans-serif;
 }
 
 h1 {
@@ -10,6 +15,6 @@ h1 {
 
 p {
   font-size: base(0.8);
-  line-height: base(0.8) * 1.2;
   font-weight: 700;
+  line-height: base(0.8) * 1.2;
 }

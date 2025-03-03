@@ -1,5 +1,5 @@
-@use "../base/index.module.scss" as *;
-@use "sass:map";
+@use '../base/index.module.scss' as *;
+@use 'sass:map';
 
 $spacing: (
   large: base(4),
@@ -18,7 +18,7 @@ $modalWidth: (
   semiLarge: base(40),
   large: base(76),
   side: base(30),
-  smallSide: base(18)
+  smallSide: base(18),
 );
 
 @function modalWidth($key) {
