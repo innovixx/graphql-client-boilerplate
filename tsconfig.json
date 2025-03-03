@@ -23,12 +23,12 @@
     "noFallthroughCasesInSwitch": true,
     "types": [
       "vite/client",
-    ]
+    ],
+    "rootDirs": [
+      ".",
+      "src/types/styles"
+    ],
   },
-  "rootDirs": [
-    ".",
-    "src/types/styles"
-  ],
   "include": [
     "src",
     "*.d.ts",
