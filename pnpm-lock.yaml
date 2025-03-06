@@ -49,8 +49,8 @@ importers:
         specifier: ^3.0.9
         version: 3.0.9
       '@innovixx/stylelint-config':
-        specifier: 1.0.3-alpha.0
-        version: 1.0.3-alpha.0(typescript@5.7.3)
+        specifier: ^1.0.3
+        version: 1.0.3(typescript@5.7.3)
       '@types/color':
         specifier: ^3.0.3
         version: 3.0.6
@@ -1028,8 +1028,8 @@ packages:
   '@innovixx/eslint-config@3.0.9':
     resolution: {integrity: sha512-rt+fEUcqJHHt3T1yWjYPeQoHApbnPDBpCCLFjU7n4XTZ1jd4lckzOtWlf3CJCgoDsjpQMefisx/5Lq2mpjBd+Q==}
 
-  '@innovixx/stylelint-config@1.0.3-alpha.0':
-    resolution: {integrity: sha512-dY49ttalhahEIEezNSqlP9yqwTTj3461EsKVHBb42FxMECKPzhLyToIVJA5dcvvFykdU5jwQwf3WQoNJURG5uw==}
+  '@innovixx/stylelint-config@1.0.3':
+    resolution: {integrity: sha512-9vVS9Cwq4U6IIzGKSUKB/Z1/HyCi/vJvzERl/BMvYQSlgJloEH5OvztBWlDCpDhGji7Ap/DP3snHTD0TgKxK3w==}
     engines: {node: '>=18.12.0'}
 
   '@jridgewell/gen-mapping@0.3.5':
@@ -5528,7 +5528,7 @@ snapshots:
       - jiti
       - supports-color
 
-  '@innovixx/stylelint-config@1.0.3-alpha.0(typescript@5.7.3)':
+  '@innovixx/stylelint-config@1.0.3(typescript@5.7.3)':
     dependencies:
       prettier: 3.5.3
       sass: 1.85.1

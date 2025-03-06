@@ -32,7 +32,7 @@
     "@graphql-codegen/typescript-operations": "^2.5.12",
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
     "@innovixx/eslint-config": "^3.0.9",
-    "@innovixx/stylelint-config": "1.0.3-alpha.0",
+    "@innovixx/stylelint-config": "^1.0.3",
     "@types/color": "^3.0.3",
     "@types/node": "^20.3.2",
     "@types/react": "^18.0.37",
