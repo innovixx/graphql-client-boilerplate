@@ -7,5 +7,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ../..:/workspaces:cached
+      - ~/.ssh:/home/vscode/.ssh:cached
+      - ~/.npmrc:/home/vscode/.npmrc:cached
     command: sleep infinity
     working_dir: /workspaces/graphql-client-boilerplate
