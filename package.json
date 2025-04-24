@@ -2,7 +2,7 @@
   "name": "graphql-client-boilerplate",
   "version": "0.0.1",
   "description": "This GraphQL client boilerplate provides a basic structure for building clients to connect to graphql servers.",
-  "repository": "git@github.com:Innovixx-Development/graphql-server-boilerplate.git",
+  "repository": "git@github.com:Innovixx/graphql-server-boilerplate.git",
   "author": "Innovixx <support@innovixx.co.uk>",
   "scripts": {
     "dev": "concurrently \"pnpm watch:generate-types:styles\" \"vite\" --hide=0",
