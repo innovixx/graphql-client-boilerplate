@@ -1,0 +1,3 @@
+{
+  "stylelint.configBasedir": "./node_modules/@innovixx/stylelint-config",
+}
