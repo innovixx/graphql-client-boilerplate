@@ -29,7 +29,7 @@ const App = (): React.ReactElement => {
 const apiUri = `${import.meta.env.VITE_APP_API}`;
 
 const httpLink = createHttpLink({
-	credentials: 'same-origin',
+	credentials: 'include',
 	uri: apiUri,
 });
 
