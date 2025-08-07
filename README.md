@@ -11,8 +11,29 @@ This is a basic structure for building clients to connect to GraphQL servers. It
 
 ## Getting Started
 
-1. Clone this repository
-2. Install dependencies: `npm install`
-3. Start the development server: `npm run dev`
-4. Generate TypeScript types for GraphQL operations: `npm run codegen`
-5. Build for production: `npm run build`
+1. Clone this repository:
+
+  ```bash
+   git clone git@github.com:innovixx/graphql-client-boilerplate.git
+   ```
+
+2. Install dependencies: 
+
+		```bash
+		pnpm install
+		```
+3. Start the development server: 
+
+		```bash
+  	pnpm dev
+   	```
+4. Generate TypeScript types for GraphQL operations: 
+
+		```bash
+   	pnpm codegen
+   	```
+5. Build for production: 
+
+		```bash
+   	pnpm build
+   	```
