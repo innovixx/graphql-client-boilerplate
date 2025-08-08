@@ -1,0 +1,16 @@
+mutation Login($email: String, $password: String, $redirectTo: String) {
+	login(email: $email, password: $password, redirectTo: $redirectTo) {
+		id
+		firstName
+		lastName
+		email
+		token
+		role
+		redirectTo
+		didRequest
+	}
+}
+
+mutation Logout {
+	logout
+}
