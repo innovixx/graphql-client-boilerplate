@@ -14,7 +14,7 @@
     "stylelint": "stylelint \"**/*.scss\"",
     "generate-types:styles": "typed-scss-modules src --outputFolder src/types/styles",
     "watch:generate-types:styles": "pnpm generate-types:styles --watch --logLevel=silent",
-    "prepare": "husky"
+    "prepare": "if [ -d node_modules/husky ]; then husky; fi"
   },
   "dependencies": {
     "@apollo/client": "^3.7.16",
