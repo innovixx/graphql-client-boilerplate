@@ -10,7 +10,7 @@
     "preview": "vite preview --port 3000",
     "codegen": "cross-env TS_NODE_PROJECT=tsconfig.codegen.json graphql-codegen --config codegen.ts",
     "lint-staged": "lint-staged --verbose",
-    "lint": "eslint ./src/**/*.{graphql,js,jsx,ts,tsx}",
+    "lint": "eslint ./src/**/*.{js,jsx,ts,tsx}",
     "stylelint": "stylelint \"**/*.scss\"",
     "generate-types:styles": "typed-scss-modules src --outputFolder src/types/styles",
     "watch:generate-types:styles": "pnpm generate-types:styles --watch --logLevel=silent",
@@ -50,9 +50,6 @@
   },
   "lint-staged": {
     "**/*.scss": "stylelint",
-    "**/*.graphql": [
-      "eslint --fix"
-    ],
     "**/*.{js,ts,jsx,tsx}": [
       "eslint --quiet",
       "bash -c tsc"
