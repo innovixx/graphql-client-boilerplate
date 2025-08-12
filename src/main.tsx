@@ -11,8 +11,6 @@ import './styles/reset/index.scss';
 const App = (): React.ReactElement => {
 	const { data: testData } = useTestQuery();
 
-	console.log(testData);
-
 	return (
 		<div>
 			<Container>
