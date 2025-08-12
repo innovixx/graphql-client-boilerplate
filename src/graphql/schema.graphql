@@ -1,3 +1,8 @@
+type Mutation {
+  login(email: String, password: String, redirectTo: String): Viewer!
+  logout: Boolean!
+}
+
 type Query {
   test: String
   viewer: Viewer!
@@ -9,22 +14,12 @@ enum UserRole {
 }
 
 type Viewer {
-  id: ID
-  firstName: String
-  lastName: String
-  email: String
-  token: String
-  role: UserRole
-  redirectTo: String
   didRequest: Boolean!
-}
-
-type Mutation {
-  login(email: String, password: String, redirectTo: String): Viewer!
-  logout: Boolean!
-}
-
-schema {
-  query: Query
-  mutation: Mutation
+  email: String
+  firstName: String
+  id: ID
+  lastName: String
+  redirectTo: String
+  role: UserRole
+  token: String
 }
