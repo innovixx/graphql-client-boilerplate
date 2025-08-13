@@ -1,7 +1,7 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
-  documents: './src/graphql/**/*.{ts,tsx}',
+  documents: './src/graphql/**/*.graphql',
   generates: {
     'src/graphql/generated/schema.ts': {
       plugins: [
@@ -9,6 +9,9 @@ const config: CodegenConfig = {
         'typescript',
         'typescript-react-apollo',
       ],
+    },
+    'src/graphql/schema.graphql': {
+      plugins: ['schema-ast'],
     },
   },
   overwrite: true,

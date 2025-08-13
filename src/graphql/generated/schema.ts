@@ -18,8 +18,6 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  Date: any;
-  JSON: any;
 };
 
 export type Query = {

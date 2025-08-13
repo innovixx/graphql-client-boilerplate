@@ -14,7 +14,7 @@
     "stylelint": "stylelint \"**/*.scss\"",
     "generate-types:styles": "typed-scss-modules src --outputFolder src/types/styles",
     "watch:generate-types:styles": "pnpm generate-types:styles --watch --logLevel=silent",
-    "prepare": "husky"
+    "prepare": "if [ -d node_modules/husky ]; then husky; fi"
   },
   "dependencies": {
     "@apollo/client": "^3.7.16",
@@ -31,6 +31,7 @@
     "@graphql-codegen/typescript": "^2.8.7",
     "@graphql-codegen/typescript-operations": "^2.5.12",
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
+    "@graphql-eslint/eslint-plugin": "^4.4.0",
     "@innovixx/eslint-config": "^3.0.10",
     "@innovixx/stylelint-config": "^1.0.6",
     "@types/color": "^3.0.3",
