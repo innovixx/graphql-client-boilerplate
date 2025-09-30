@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { setContext } from '@apollo/client/link/context';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { Container } from './components';
-import { useTestQuery, useTestsQuery } from './graphql/generated/schema';
+import { useTestsQuery } from './graphql/generated/schema';
 import './styles/index.scss';
 import './styles/globals/index.scss';
 import './styles/reset/index.scss';
