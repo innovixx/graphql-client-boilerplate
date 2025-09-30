@@ -1,3 +1,14 @@
-query Test {
-  test
+query Test($testId: String!) {
+  test(id: $testId) {
+    id
+  }
+}
+
+query Tests($limit: Int, $offset: Int, $where: Where, $sortBy: String) {
+  tests(limit: $limit, offset: $offset, where: $where, sortBy: $sortBy) {
+    items {
+      id
+      text
+    }
+  }
 }

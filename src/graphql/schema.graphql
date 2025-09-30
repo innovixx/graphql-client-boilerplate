@@ -1,3 +1,55 @@
+directive @inherits(type: String!) on OBJECT
+
+input CreateTestInput {
+  text: String!
+}
+
+scalar Date
+
+scalar JSON
+
+type Mutation {
+  createTest(input: CreateTestInput): Test!
+  deleteTest(id: String!): Boolean!
+  updateTest(id: String!, input: CreateTestInput): Test!
+}
+
+interface PaginatedDocs {
+  total: Int!
+}
+
+type PaginatedTests implements PaginatedDocs {
+  items: [Test!]
+  total: Int!
+}
+
 type Query {
-  test: String
+  test(id: String!): Test!
+  tests(limit: Int, offset: Int, sortBy: String, where: Where): PaginatedTests!
+}
+
+type Test {
+  createdAt: Date!
+  id: String!
+  text: String!
+  updatedAt: Date!
+}
+
+input Where {
+  and: [Where]
+  field: String!
+  or: [Where]
+  value: WhereField
+}
+
+input WhereField {
+  contains: JSON
+  equals: JSON
+  exists: JSON
+  greater_than: JSON
+  greater_than_equal: JSON
+  in: JSON
+  less_than: JSON
+  not_equals: JSON
+  not_in: JSON
 }

@@ -3,20 +3,24 @@ import ReactDOM from 'react-dom/client';
 import { setContext } from '@apollo/client/link/context';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { Container } from './components';
-import { useTestQuery } from './graphql/generated/schema';
+import { useTestQuery, useTestsQuery } from './graphql/generated/schema';
 import './styles/index.scss';
 import './styles/globals/index.scss';
 import './styles/reset/index.scss';
 
 const App = (): React.ReactElement => {
-	const { data: testData } = useTestQuery();
+	const { data: testData } = useTestsQuery();
 
 	return (
 		<div>
 			<Container>
 				{
-					(testData?.test !== undefined) ? (
-						<p>{testData.test}</p>
+					(testData?.tests !== undefined) ? (
+						testData?.tests?.items?.map((test) => (
+							<div key={test.id}>
+								<p>{test.text}</p>
+							</div>
+						))
 					) : (
 						<p>loading...</p>
 					)

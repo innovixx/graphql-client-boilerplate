@@ -1,7 +1,10 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
+import dotenv from 'dotenv';
+
+dotenv.config()
 
 const config: CodegenConfig = {
-  documents: './src/graphql/**/*.graphql',
+  documents: './src/graphql/**/*.{graphql,ts,tsx}',
   generates: {
     'src/graphql/generated/schema.ts': {
       plugins: [
@@ -15,7 +18,7 @@ const config: CodegenConfig = {
     },
   },
   overwrite: true,
-  schema: 'http://localhost:9000/api',
+  schema: `${process.env.VITE_APP_API}`,
 };
 
 export default config;
