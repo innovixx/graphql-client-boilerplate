@@ -34,7 +34,7 @@
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
     "@graphql-eslint/eslint-plugin": "^4.4.0",
     "@innovixx/eslint-config": "^3.0.10",
-    "@innovixx/stylelint-config": "^1.0.6",
+    "@innovixx/stylelint-config": "^1.0.7",
     "@types/color": "^3.0.3",
     "@types/node": "^20.3.2",
     "@types/react": "^18.3.1",
