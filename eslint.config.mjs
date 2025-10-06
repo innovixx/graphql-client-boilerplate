@@ -28,6 +28,7 @@ export default [
 		languageOptions: {
 			parser: graphqlPlugin.parser,
 		},
+		ignores: ['**/node_modules/**', 'src/graphql/schema.graphql'],
 		plugins: {
 			'@graphql-eslint': graphqlPlugin,
 		},
