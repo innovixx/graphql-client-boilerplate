@@ -90,6 +90,14 @@ export type QueryTestsArgs = {
   where?: InputMaybe<Where>;
 };
 
+export type RelationWhere = {
+  every?: InputMaybe<Where>;
+  is?: InputMaybe<Where>;
+  isNot?: InputMaybe<Where>;
+  none?: InputMaybe<Where>;
+  some?: InputMaybe<Where>;
+};
+
 export type Test = {
   __typename?: 'Test';
   createdAt: Scalars['Date'];
@@ -100,8 +108,9 @@ export type Test = {
 
 export type Where = {
   and?: InputMaybe<Array<InputMaybe<Where>>>;
-  field: Scalars['String'];
+  field?: InputMaybe<Scalars['String']>;
   or?: InputMaybe<Array<InputMaybe<Where>>>;
+  relation?: InputMaybe<RelationWhere>;
   value?: InputMaybe<WhereField>;
 };
 
@@ -109,13 +118,20 @@ export type WhereField = {
   contains?: InputMaybe<Scalars['JSON']>;
   equals?: InputMaybe<Scalars['JSON']>;
   exists?: InputMaybe<Scalars['JSON']>;
-  greater_than?: InputMaybe<Scalars['JSON']>;
-  greater_than_equal?: InputMaybe<Scalars['JSON']>;
+  gt?: InputMaybe<Scalars['JSON']>;
+  gte?: InputMaybe<Scalars['JSON']>;
   in?: InputMaybe<Scalars['JSON']>;
-  less_than?: InputMaybe<Scalars['JSON']>;
+  lt?: InputMaybe<Scalars['JSON']>;
+  lte?: InputMaybe<Scalars['JSON']>;
+  mode?: InputMaybe<WhereFieldMode>;
   not_equals?: InputMaybe<Scalars['JSON']>;
   not_in?: InputMaybe<Scalars['JSON']>;
 };
+
+export enum WhereFieldMode {
+  Default = 'default',
+  Insensitive = 'insensitive'
+}
 
 
 export const TestDocument = gql`

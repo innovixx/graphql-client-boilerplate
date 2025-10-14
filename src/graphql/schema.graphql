@@ -28,6 +28,14 @@ type Query {
   tests(limit: Int, offset: Int, sortBy: String, where: Where): PaginatedTests!
 }
 
+input RelationWhere {
+  every: Where
+  is: Where
+  isNot: Where
+  none: Where
+  some: Where
+}
+
 type Test {
   createdAt: Date!
   id: String!
@@ -37,8 +45,9 @@ type Test {
 
 input Where {
   and: [Where]
-  field: String!
+  field: String
   or: [Where]
+  relation: RelationWhere
   value: WhereField
 }
 
@@ -46,10 +55,17 @@ input WhereField {
   contains: JSON
   equals: JSON
   exists: JSON
-  greater_than: JSON
-  greater_than_equal: JSON
+  gt: JSON
+  gte: JSON
   in: JSON
-  less_than: JSON
+  lt: JSON
+  lte: JSON
+  mode: WhereFieldMode
   not_equals: JSON
   not_in: JSON
+}
+
+enum WhereFieldMode {
+  default
+  insensitive
 }

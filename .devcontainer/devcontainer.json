@@ -6,9 +6,11 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"GraphQL.vscode-graphql",
+				"GraphQL.vscode-graphql-syntax",
 				"dbaeumer.vscode-eslint",
-				"orsenkucher.vscode-graphql",
-				"stylelint.vscode-stylelint"
+				"stylelint.vscode-stylelint",
+				"mrmlnc.vscode-scss"
 			]
 		}
 	},
