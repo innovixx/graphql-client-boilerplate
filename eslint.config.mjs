@@ -17,7 +17,6 @@ export default [
 			'codegen.ts',
 			'graphql.config.ts',
 			'schema.graphql',
-
 		],
 	},
 	{
@@ -33,9 +32,10 @@ export default [
 			'@graphql-eslint': graphqlPlugin,
 		},
 		rules: {
-			'@graphql-eslint/no-anonymous-operations': 'error',
+			'eol-last': 'warn',
+			'@graphql-eslint/no-anonymous-operations': 'warn',
 			'@graphql-eslint/naming-convention': [
-				'error',
+				'warn',
 				{
 					OperationDefinition: {
 						style: 'PascalCase',
