@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { setContext } from '@apollo/client/link/context';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
-import { Container } from './components';
-import { useTestsQuery } from './graphql/generated/schema';
 import './styles/index.scss';
 import './styles/globals/index.scss';
 import './styles/reset/index.scss';
+import { useTestsQuery } from './graphql/generated/schema';
+import { Container } from './components';
 
 const App = (): React.ReactElement => {
 	const { data: testData } = useTestsQuery();
@@ -49,6 +49,16 @@ const authLink = setContext((_, { headers = {} }: { headers?: Record<string, str
 
 const client = new ApolloClient({
 	cache: new InMemoryCache(),
+	defaultOptions: {
+		watchQuery: {
+			fetchPolicy: 'no-cache',
+			errorPolicy: 'ignore',
+		},
+		query: {
+			fetchPolicy: 'no-cache',
+			errorPolicy: 'all',
+		},
+	},
 	link: authLink.concat(httpLink),
 });
 
