@@ -52,11 +52,9 @@ const client = new ApolloClient({
 	defaultOptions: {
 		watchQuery: {
 			fetchPolicy: 'no-cache',
-			errorPolicy: 'ignore',
 		},
 		query: {
 			fetchPolicy: 'no-cache',
-			errorPolicy: 'all',
 		},
 	},
 	link: authLink.concat(httpLink),
