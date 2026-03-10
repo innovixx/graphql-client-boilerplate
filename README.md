@@ -40,3 +40,6 @@ This is a basic structure for building clients to connect to GraphQL servers. It
    ```bash
    pnpm build
    ```
+## Considerations
+
+ - Updating ESLint to version >= 10 causes incompatibility issues with eslint-react-plugin used under-the-hood by @innovixx/eslint-config. Version locked to the latest stable and compatible version.
