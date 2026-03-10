@@ -8,10 +8,16 @@ const config: CodegenConfig = {
   generates: {
     'src/graphql/generated/schema.ts': {
       plugins: [
-        'typescript-operations',
         'typescript',
-        'typescript-react-apollo',
+        'typescript-operations',
       ],
+    },
+    'src/graphql/generated/': {
+      preset: 'client',
+      plugins: [],
+      presetConfig: {
+        gqlTagName: 'gql',
+      },
     },
     'src/graphql/generated/schema.graphql': {
       plugins: ['schema-ast'],

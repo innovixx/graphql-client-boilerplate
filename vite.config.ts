@@ -7,13 +7,6 @@ export default ({ mode }: { mode: string }): UserConfig => {
 	process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
 	return defineConfig({
-		css: {
-			preprocessorOptions: {
-				scss: {
-					api: 'modern-compiler',
-				},
-			},
-		},
 		plugins: [react()],
 		server: {
 			host: true,

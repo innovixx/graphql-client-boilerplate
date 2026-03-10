@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { setContext } from '@apollo/client/link/context';
-import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
+import {
+	ApolloClient,
+	HttpLink,
+	InMemoryCache,
+} from '@apollo/client';
+import { SetContextLink } from '@apollo/client/link/context';
+import { ApolloProvider, useQuery } from '@apollo/client/react';
 import './styles/index.scss';
 import './styles/globals/index.scss';
 import './styles/reset/index.scss';
-import { useTestsQuery } from './graphql/generated/schema';
+import type { TestsQuery, TestsQueryVariables } from './graphql/generated/schema';
 import { Container } from './components';
+import { TestsDocument } from './graphql/generated/graphql';
 
 const App = (): React.ReactElement => {
-	const { data: testData } = useTestsQuery();
+	const { data: testData, error: testError } = useQuery<TestsQuery, TestsQueryVariables>(TestsDocument, {
+		variables: {
+			limit: 10,
+		},
+	});
+
+	useEffect(() => {
+		if (testError) {
+			console.error('Error fetching tests:', testError);
+		}
+	});
 
 	return (
 		<div>
@@ -32,17 +48,17 @@ const App = (): React.ReactElement => {
 
 const apiUri = `${import.meta.env.VITE_APP_API}`;
 
-const httpLink = createHttpLink({
+const httpLink = new HttpLink({
 	credentials: 'include',
 	uri: apiUri,
 });
 
-const authLink = setContext((_, { headers = {} }: { headers?: Record<string, string> }) => {
+const authLink = new SetContextLink((prevContext, _) => {
 	const token = sessionStorage.getItem('token');
 	return {
 		headers: {
-			...headers,
-			'X-CSRF-TOKEN': `${token}`,
+			...prevContext.headers,
+			'X-CSRF-TOKEN': token,
 		},
 	};
 });
