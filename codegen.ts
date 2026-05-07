@@ -9,13 +9,14 @@ const config: CodegenConfig = {
 	generates: {
 		'src/graphql/generated/': {
 			preset: 'client',
-			plugins: [],
 			presetConfig: {
 				gqlTagName: 'gql',
 			},
 		},
 		'src/graphql/generated/schema.graphql': {
-			plugins: ['schema-ast'],
+			plugins: [
+				'schema-ast',
+			],
 		},
 	},
 	overwrite: true,
