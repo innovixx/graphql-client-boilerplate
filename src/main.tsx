@@ -11,8 +11,8 @@ import './styles/index.scss';
 import './styles/globals/index.scss';
 import './styles/reset/index.scss';
 import { Container } from './components';
-import type { TestsQuery, TestsQueryVariables } from './graphql/generated/client/graphql';
-import { TestsDocument } from './graphql/generated/client/graphql';
+import type { TestsQuery, TestsQueryVariables } from './graphql/generated/graphql';
+import { TestsDocument } from './graphql/generated/graphql';
 
 const App = (): React.ReactElement => {
 	const { data: testData, error: testError } = useQuery<TestsQuery, TestsQueryVariables>(TestsDocument, {

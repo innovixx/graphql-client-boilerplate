@@ -13,8 +13,7 @@ export default [
 	},
 	{
 		ignores: [
-			'src/graphql/generated',
-			'schema.graphql',
+			'src/graphql/generated/**/*',
 		],
 	},
 	{

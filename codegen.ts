@@ -4,14 +4,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const config: CodegenConfig = {
-	documents: './src/graphql/**/*.{graphql,ts,tsx}',
+	schema: `${process.env.VITE_APP_API}`,
+	documents: './src/graphql/**/*.graphql',
 	generates: {
-		'src/graphql/generated/schema.ts': {
-			plugins: [
-				'typescript',
-			],
-		},
-		'src/graphql/generated/client/': {
+		'src/graphql/generated/': {
 			preset: 'client',
 			plugins: [],
 			presetConfig: {
@@ -22,15 +18,7 @@ const config: CodegenConfig = {
 			plugins: ['schema-ast'],
 		},
 	},
-	config: {
-		scalars: {
-			Date: 'string',
-			DateTime: 'string',
-			JSON: 'any',
-		},
-	},
 	overwrite: true,
-	schema: `${process.env.VITE_APP_API}`,
 };
 
 export default config;
