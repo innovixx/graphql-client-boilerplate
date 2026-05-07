@@ -10,9 +10,9 @@ import { ApolloProvider, useQuery } from '@apollo/client/react';
 import './styles/index.scss';
 import './styles/globals/index.scss';
 import './styles/reset/index.scss';
-import type { TestsQuery, TestsQueryVariables } from './graphql/generated/schema';
 import { Container } from './components';
-import { TestsDocument } from './graphql/generated/graphql';
+import type { TestsQuery, TestsQueryVariables } from './graphql/generated/client/graphql';
+import { TestsDocument } from './graphql/generated/client/graphql';
 
 const App = (): React.ReactElement => {
 	const { data: testData, error: testError } = useQuery<TestsQuery, TestsQueryVariables>(TestsDocument, {

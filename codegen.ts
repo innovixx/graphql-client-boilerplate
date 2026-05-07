@@ -9,10 +9,9 @@ const config: CodegenConfig = {
 		'src/graphql/generated/schema.ts': {
 			plugins: [
 				'typescript',
-				'typescript-operations',
 			],
 		},
-		'src/graphql/generated/': {
+		'src/graphql/generated/client/': {
 			preset: 'client',
 			plugins: [],
 			presetConfig: {
@@ -21,6 +20,13 @@ const config: CodegenConfig = {
 		},
 		'src/graphql/generated/schema.graphql': {
 			plugins: ['schema-ast'],
+		},
+	},
+	config: {
+		scalars: {
+			Date: 'string',
+			DateTime: 'string',
+			JSON: 'any',
 		},
 	},
 	overwrite: true,

@@ -12,7 +12,7 @@ export type Scalars = {
   Boolean: { input: boolean; output: boolean; }
   Int: { input: number; output: number; }
   Float: { input: number; output: number; }
-  Date: { input: any; output: any; }
+  Date: { input: string; output: string; }
   JSON: { input: any; output: any; }
 };
 
@@ -114,20 +114,3 @@ export enum WhereFieldMode {
   Default = 'default',
   Insensitive = 'insensitive'
 }
-
-export type TestQueryVariables = Exact<{
-  testId: Scalars['String']['input'];
-}>;
-
-
-export type TestQuery = { __typename?: 'Query', test: { __typename?: 'Test', id: string } };
-
-export type TestsQueryVariables = Exact<{
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<Where>;
-  sortBy?: InputMaybe<Scalars['String']['input']>;
-}>;
-
-
-export type TestsQuery = { __typename?: 'Query', tests: { __typename?: 'PaginatedTests', items?: Array<{ __typename?: 'Test', id: string, text: string }> | null } };
