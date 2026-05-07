@@ -14,13 +14,32 @@ export default [
 	{
 		ignores: [
 			'src/graphql/generated',
-			'codegen.ts',
-			'graphql.config.ts',
 			'schema.graphql',
 		],
 	},
 	{
-		files: ['**/*.{js,jsx,ts,tsx}'],
+		files: ['eslint.config.mjs'],
+		languageOptions: {
+			parserOptions: {
+				project: null,
+			},
+		},
+	},
+	{
+		files: ['graphql.config.ts'],
+		languageOptions: {
+			parserOptions: {
+				project: './tsconfig.graphql.json',
+			},
+		},
+	},
+	{
+		files: ['codegen.ts'],
+		languageOptions: {
+			parserOptions: {
+				project: './tsconfig.codegen.json',
+			},
+		},
 	},
 	{
 		files: ['**/*.graphql'],
