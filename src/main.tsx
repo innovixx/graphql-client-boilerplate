@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
+import type { TypedDocumentNode } from '@apollo/client';
 import {
 	ApolloClient,
 	HttpLink,
@@ -14,8 +15,10 @@ import { Container } from './components';
 import type { TestsQuery, TestsQueryVariables } from './graphql/generated/graphql';
 import { TestsDocument } from './graphql/generated/graphql';
 
+const DocumentQueryType: TypedDocumentNode<TestsQuery, TestsQueryVariables> = TestsDocument;
+
 const App = (): React.ReactElement => {
-	const { data: testData, error: testError } = useQuery<TestsQuery, TestsQueryVariables>(TestsDocument, {
+	const { data: testData, error: testError } = useQuery(DocumentQueryType, {
 		variables: {
 			limit: 10,
 		},
