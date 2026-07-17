@@ -17,26 +17,10 @@ export default [
 		],
 	},
 	{
-		files: ['eslint.config.mjs'],
+		files: ['*.config.ts'],
 		languageOptions: {
 			parserOptions: {
 				project: null,
-			},
-		},
-	},
-	{
-		files: ['graphql.config.ts'],
-		languageOptions: {
-			parserOptions: {
-				project: './tsconfig.graphql.json',
-			},
-		},
-	},
-	{
-		files: ['codegen.ts'],
-		languageOptions: {
-			parserOptions: {
-				project: './tsconfig.codegen.json',
 			},
 		},
 	},
