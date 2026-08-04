@@ -16,10 +16,7 @@ $spacing: (
 $modalWidth: (
   small: base(26),
   medium: base(46),
-  semiLarge: base(40),
   large: base(76),
-  side: base(30),
-  smallSide: base(18),
 );
 
 @function modalWidth($key) {
