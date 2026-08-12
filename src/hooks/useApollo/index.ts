@@ -9,26 +9,17 @@ type ErrorLike = {
 type ErrorHandler = (error: ErrorLike) => void;
 type CompletedHandler<TData> = (data: TData) => void;
 
-type QueryOptionsWithHandlers<TData, TVariables extends OperationVariables> = Omit<
-	useQuery.Options<TData, TVariables>,
-	'onError' | 'onCompleted'
-> & {
+type QueryOptionsWithHandlers<TData, TVariables extends OperationVariables> = Omit<useQuery.Options<TData, TVariables>, 'onError' | 'onCompleted'> & {
 	onError?: ErrorHandler;
 	onCompleted?: CompletedHandler<TData>;
 };
 
-type LazyQueryOptionsWithHandlers<TData, TVariables extends OperationVariables> = Omit<
-	useLazyQuery.Options<TData, TVariables>,
-	'onError' | 'onCompleted'
-> & {
+type LazyQueryOptionsWithHandlers<TData, TVariables extends OperationVariables> = Omit<useLazyQuery.Options<TData, TVariables>, 'onError' | 'onCompleted'> & {
 	onError?: ErrorHandler;
 	onCompleted?: CompletedHandler<TData>;
 };
 
-export const useAppQuery = <TData, TVariables extends OperationVariables = OperationVariables>(
-	query: DocumentNode | TypedDocumentNode<TData, TVariables>,
-	options?: QueryOptionsWithHandlers<TData, TVariables>,
-): useQuery.Result<TData, TVariables> => {
+export const useAppQuery = <TData, TVariables extends OperationVariables = OperationVariables>(query: DocumentNode | TypedDocumentNode<TData, TVariables>, options?: QueryOptionsWithHandlers<TData, TVariables>): useQuery.Result<TData, TVariables> => {
 	const previousErrorMessageRef = useRef<string | undefined>(undefined);
 	const previousDataRef = useRef<TData | undefined>(undefined);
 	const { onError, onCompleted, ...queryOptions } = options ?? {};
@@ -55,17 +46,11 @@ export const useAppQuery = <TData, TVariables extends OperationVariables = Opera
 	return result;
 };
 
-export const useAppLazyQuery = <TData, TVariables extends OperationVariables = OperationVariables>(
-	query: DocumentNode | TypedDocumentNode<TData, TVariables>,
-	options?: LazyQueryOptionsWithHandlers<TData, TVariables>,
-): useLazyQuery.ResultTuple<TData, TVariables> => {
+export const useAppLazyQuery = <TData, TVariables extends OperationVariables = OperationVariables>(query: DocumentNode | TypedDocumentNode<TData, TVariables>, options?: LazyQueryOptionsWithHandlers<TData, TVariables>): useLazyQuery.ResultTuple<TData, TVariables> => {
 	const previousErrorMessageRef = useRef<string | undefined>(undefined);
 	const previousDataRef = useRef<TData | undefined>(undefined);
 	const { onError, onCompleted, ...lazyQueryOptions } = options ?? {};
-	const lazyQueryResult = useLazyQuery(
-		query,
-		lazyQueryOptions as useLazyQuery.Options<TData, TVariables>,
-	);
+	const lazyQueryResult = useLazyQuery(query, lazyQueryOptions as useLazyQuery.Options<TData, TVariables>);
 	const [, result] = lazyQueryResult;
 
 	useEffect(() => {
