@@ -30,6 +30,5 @@
   "include": [
     "src",
     "*.d.ts",
-    "vite.config.ts"
   ]
 }
