@@ -17,9 +17,6 @@ importers:
       graphql:
         specifier: ^17.0.2
         version: 17.0.2
-      graphql-tag:
-        specifier: ^2.12.7
-        version: 2.12.7(graphql@17.0.2)
       react:
         specifier: ^19.2.8
         version: 19.2.8

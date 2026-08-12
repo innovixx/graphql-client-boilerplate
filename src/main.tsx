@@ -9,7 +9,7 @@ import { SetContextLink } from '@apollo/client/link/context';
 import { ApolloProvider } from '@apollo/client/react';
 import './styles/index.scss';
 import './styles/globals/index.scss';
-import './styles/reset/index.scss';
+import './styles/reset.scss';
 import { Container } from './components';
 import { TestsDocument } from './graphql/generated/graphql';
 import { useAppQuery } from './hooks/useApollo';
