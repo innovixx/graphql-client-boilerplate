@@ -1,41 +1,35 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import type { TypedDocumentNode } from '@apollo/client';
 import {
 	ApolloClient,
 	HttpLink,
 	InMemoryCache,
 } from '@apollo/client';
 import { SetContextLink } from '@apollo/client/link/context';
-import { ApolloProvider, useQuery } from '@apollo/client/react';
+import { ApolloProvider } from '@apollo/client/react';
 import './styles/index.scss';
 import './styles/globals/index.scss';
 import './styles/reset/index.scss';
 import { Container } from './components';
-import type { TestsQuery, TestsQueryVariables } from './graphql/generated/graphql';
 import { TestsDocument } from './graphql/generated/graphql';
-
-const DocumentQueryType: TypedDocumentNode<TestsQuery, TestsQueryVariables> = TestsDocument;
+import { useAppQuery } from './hooks/useApollo';
 
 const App = (): React.ReactElement => {
-	const { data: testData, error: testError } = useQuery(DocumentQueryType, {
+	const { data: testsData } = useAppQuery(TestsDocument, {
+		onError: (error) => {
+			console.error('Error fetching tests:', error);
+		},
 		variables: {
 			limit: 10,
 		},
-	});
-
-	useEffect(() => {
-		if (testError) {
-			console.error('Error fetching tests:', testError);
-		}
 	});
 
 	return (
 		<div>
 			<Container>
 				{
-					(testData?.tests !== undefined) ? (
-						testData?.tests?.items?.map((test) => (
+					(testsData?.tests !== undefined) ? (
+						testsData?.tests?.items?.map((test) => (
 							<div key={test.id}>
 								<p>{test.text}</p>
 							</div>
