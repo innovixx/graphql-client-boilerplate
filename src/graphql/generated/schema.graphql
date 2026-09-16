@@ -4,8 +4,10 @@ input CreateTestInput {
   text: String!
 }
 
+"""An ISO-8601 date-time string."""
 scalar Date
 
+"""An arbitrary JSON value."""
 scalar JSON
 
 type Mutation {
@@ -42,6 +44,8 @@ type Test {
   text: String!
   updatedAt: Date!
 }
+
+scalar Upload
 
 input Where {
   and: [Where]
