@@ -15,31 +15,55 @@ import { TestsDocument } from './graphql/generated/graphql';
 import { useAppQuery } from './hooks/useApollo';
 
 const App = (): React.ReactElement => {
-	const { data: testsData } = useAppQuery(TestsDocument, {
-		onError: (error) => {
-			console.error('Error fetching tests:', error);
+	const { data: testsData, loading: testsLoading, error: testsError } = useAppQuery(TestsDocument, {
+		onError: (queryError) => {
+			console.error('Error fetching tests:', queryError);
 		},
 		variables: {
 			limit: 10,
 		},
 	});
 
-	return (
-		<div>
+	if (testsLoading) {
+		return (
 			<Container>
-				{
-					(testsData?.tests !== undefined) ? (
-						testsData?.tests?.items?.map((test) => (
-							<div key={test.id}>
-								<p>{test.text}</p>
-							</div>
-						))
-					) : (
-						<p>loading...</p>
-					)
-				}
+				<p role="status">Loading tests...</p>
 			</Container>
-		</div>
+		);
+	}
+
+	if (testsError) {
+		return (
+			<Container>
+				<p role="alert">
+					Unable to load tests. Please try again later.
+				</p>
+			</Container>
+		);
+	}
+
+	const tests = testsData?.tests?.items;
+
+	if (tests == null) {
+		return (
+			<Container>
+				<p role="alert">The server did not return the expected test data.</p>
+			</Container>
+		);
+	}
+
+	return (
+		<Container>
+			{tests.length === 0 ? (
+				<p>No tests found.</p>
+			) : (
+				tests.map((test) => (
+					<div key={test.id}>
+						<p>{test.text}</p>
+					</div>
+				))
+			)}
+		</Container>
 	);
 };
 
