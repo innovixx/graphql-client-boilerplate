@@ -43,8 +43,8 @@ importers:
         specifier: ^3.0.14
         version: 3.0.14(46785243e5aac2ca48de6f16fa8cb580)
       '@innovixx/stylelint-config':
-        specifier: ^1.0.10
-        version: 1.0.10(supports-color@10.2.2)(typescript@6.0.3)
+        specifier: ^1.0.11
+        version: 1.0.11(supports-color@10.2.2)(typescript@6.0.3)
       '@types/color':
         specifier: ^4.2.1
         version: 4.2.1
@@ -818,8 +818,8 @@ packages:
       react-dom: ^19.3.1
       typescript-eslint: ^8.72.1
 
-  '@innovixx/stylelint-config@1.0.10':
-    resolution: {integrity: sha512-8hZlgXhi5tMsWItHFBVvCKqTd9QXCgKjwhV6MOwpfnOvza2SYXGRghQoZD98brslIQnLnQHv0RJm4cVZzcFWOg==}
+  '@innovixx/stylelint-config@1.0.11':
+    resolution: {integrity: sha512-JEtjAYvLPJIhBogZk31a3yE9CBF07B0rq6k0X3fc+nIaCpbJ65HG7mBre9Oh2ZWALMf0cB9f5xvXoLYlcbEjxw==}
     engines: {node: '>=18.12.0'}
 
   '@inquirer/ansi@2.0.10':
@@ -4738,7 +4738,7 @@ snapshots:
       typescript: 6.0.3
       typescript-eslint: 8.72.1(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
 
-  '@innovixx/stylelint-config@1.0.10(supports-color@10.2.2)(typescript@6.0.3)':
+  '@innovixx/stylelint-config@1.0.11(supports-color@10.2.2)(typescript@6.0.3)':
     dependencies:
       prettier: 3.9.10
       sass: 1.106.1

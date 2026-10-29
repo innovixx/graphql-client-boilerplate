@@ -4,6 +4,7 @@ allowBuilds:
   unrs-resolver: true
 minimumReleaseAgeExclude:
   - '@innovixx/eslint-config@3.0.14'
+  - '@innovixx/stylelint-config@1.0.11'
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
