@@ -21,17 +21,17 @@ export type Where = {
 };
 
 export type WhereField = {
-  contains?: unknown;
-  equals?: unknown;
-  exists?: unknown;
-  gt?: unknown;
-  gte?: unknown;
-  in?: unknown;
-  lt?: unknown;
-  lte?: unknown;
+  contains?: any;
+  equals?: any;
+  exists?: any;
+  gt?: any;
+  gte?: any;
+  in?: any;
+  lt?: any;
+  lte?: any;
   mode?: WhereFieldMode | null | undefined;
-  not_equals?: unknown;
-  not_in?: unknown;
+  not_equals?: any;
+  not_in?: any;
 };
 
 export type WhereFieldMode =

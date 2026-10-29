@@ -10,8 +10,25 @@ const config: CodegenConfig = {
 			preset: 'client',
 			presetConfig: {
 				gqlTagName: 'gql',
+				fragmentMasking: false,
 			},
 			schema: `${process.env.VITE_APP_API}`,
+			config: {
+				scalars: {
+					Date: 'string',
+					JSON: 'any',
+				},
+			},
+		},
+		'src/graphql/generated/schema.ts': {
+			plugins: ['typescript'],
+			schema: `${process.env.VITE_APP_API}`,
+			config: {
+				scalars: {
+					Date: 'string',
+					JSON: 'any',
+				},
+			},
 		},
 		'src/graphql/generated/schema.graphql': {
 			plugins: ['schema-ast'],

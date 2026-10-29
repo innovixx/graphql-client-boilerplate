@@ -7,6 +7,18 @@ input CreateTestInput {
 """An ISO-8601 date-time string."""
 scalar Date
 
+input DateFilter {
+  equals: Date
+  exists: Boolean
+  gt: Date
+  gte: Date
+  in: [Date!]
+  lt: Date
+  lte: Date
+  not_equals: Date
+  not_in: [Date!]
+}
+
 """An arbitrary JSON value."""
 scalar JSON
 
@@ -38,11 +50,50 @@ input RelationWhere {
   some: Where
 }
 
+input StringFilter {
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String!]
+  mode: WhereFieldMode
+  not_equals: String
+  not_in: [String!]
+}
+
 type Test {
   createdAt: Date!
   id: String!
   text: String!
   updatedAt: Date!
+}
+
+input TestListRelationFilter {
+  every: TestScalarWhereInput
+  none: TestScalarWhereInput
+  some: TestScalarWhereInput
+}
+
+input TestRelationFilter {
+  is: TestScalarWhereInput
+  isNot: TestScalarWhereInput
+}
+
+input TestScalarWhereInput {
+  AND: [TestScalarWhereInput!]
+  OR: [TestScalarWhereInput!]
+  createdAt: DateFilter
+  id: StringFilter
+  text: StringFilter
+  updatedAt: DateFilter
+}
+
+input TestWhereInput {
+  AND: [TestWhereInput!]
+  OR: [TestWhereInput!]
+  createdAt: DateFilter
+  id: StringFilter
+  text: StringFilter
+  updatedAt: DateFilter
 }
 
 scalar Upload

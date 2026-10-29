@@ -18,6 +18,14 @@ export default [
 		],
 	},
 	{
+		files: ['codegen.ts'],
+		languageOptions: {
+			parserOptions: {
+				project: null,
+			},
+		},
+	},
+	{
 		files: ['*.config.ts'],
 		languageOptions: {
 			parserOptions: {
