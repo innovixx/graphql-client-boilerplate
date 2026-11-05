@@ -8,12 +8,4 @@ export default [
 	reactConfig,
 	typescriptConfig,
 	...graphqlConfig,
-	{
-		files: ['codegen.ts', '*.config.ts'],
-		languageOptions: {
-			parserOptions: {
-				project: null,
-			},
-		},
-	},
 ];
