@@ -789,14 +789,14 @@ packages:
     engines: {node: '>=18.18'}
 
   '@innovixx/eslint-config@4.0.0-alpha.8':
-    resolution: {integrity: sha512-jXrWHPvOQnwQkDc94xOIRQ/0sQLlBX0FiWsfqRmHDzw+zXyzKntJufjPw2wui23zN6CvwcTgIaJIDDlqdKh30Q==, tarball: https://npm.pkg.github.com/download/@innovixx/eslint-config/4.0.0-alpha.8/8ce44281233c1d6ff53f319ca25c7ffee6860fc5}
+    resolution: {integrity: sha512-jXrWHPvOQnwQkDc94xOIRQ/0sQLlBX0FiWsfqRmHDzw+zXyzKntJufjPw2wui23zN6CvwcTgIaJIDDlqdKh30Q==}
     peerDependencies:
       eslint: ^10.14.0
       graphql: ^16
       typescript: 6.0.3
 
   '@innovixx/stylelint-config@1.0.11':
-    resolution: {integrity: sha512-JEtjAYvLPJIhBogZk31a3yE9CBF07B0rq6k0X3fc+nIaCpbJ65HG7mBre9Oh2ZWALMf0cB9f5xvXoLYlcbEjxw==, tarball: https://npm.pkg.github.com/download/@innovixx/stylelint-config/1.0.11/d9ca8050ad1829ffaac62e7cf84b5cb3447ac463}
+    resolution: {integrity: sha512-JEtjAYvLPJIhBogZk31a3yE9CBF07B0rq6k0X3fc+nIaCpbJ65HG7mBre9Oh2ZWALMf0cB9f5xvXoLYlcbEjxw==}
     engines: {node: '>=18.12.0'}
 
   '@inquirer/ansi@2.0.10':
