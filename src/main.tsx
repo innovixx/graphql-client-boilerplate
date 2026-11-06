@@ -27,7 +27,7 @@ const App = (): React.ReactElement => {
 	if (testsLoading) {
 		return (
 			<Container>
-				<p role="status">Loading tests...</p>
+				<output>Loading tests...</output>
 			</Container>
 		);
 	}
